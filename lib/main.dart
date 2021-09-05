@@ -157,8 +157,8 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
         equation = equation.length <= 1 ? "0" : equation.substring(0, equation.length - 1);
       } else if (buttonText == "=") {
         expression = equation;
-        expression.replaceAll('×', '*');
-        expression.replaceAll('÷', '/');
+        expression = expression.replaceAll('×', '*');
+        expression = expression.replaceAll('÷', '/');
         try {
           Parser p = Parser();
           Expression e = p.parse(expression);
